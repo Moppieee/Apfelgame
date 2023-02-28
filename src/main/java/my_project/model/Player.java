@@ -5,7 +5,7 @@ import KAGO_framework.view.DrawTool;
 
 import java.awt.event.KeyEvent;
 
-public class Player extends InteractiveGraphicalObject {
+public class Player<x> extends InteractiveGraphicalObject {
 
 
     //Attribute
@@ -46,6 +46,12 @@ public class Player extends InteractiveGraphicalObject {
         if(direction == 2){
             x = x - speed*dt;
         }
+        if (x > 910){
+            x = 910;
+        }
+        if (x < 0){
+            x = 0;
+        }
     }
 
     @Override
@@ -67,4 +73,5 @@ public class Player extends InteractiveGraphicalObject {
             direction = -1;
         }
     }
+
 }
